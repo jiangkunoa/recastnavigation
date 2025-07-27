@@ -3,6 +3,8 @@ var hierarchy =
     [ "BoundsItem", "structBoundsItem.html", null ],
     [ "BuildSettings", "structBuildSettings.html", null ],
     [ "BVItem", "structBVItem.html", null ],
+    [ "CConfigFile", "classCConfigFile.html", null ],
+    [ "CmdHelper", "classCmdHelper.html", null ],
     [ "ConvexVolume", "structConvexVolume.html", null ],
     [ "CrowdToolParams", "structCrowdToolParams.html", null ],
     [ "DirtyEntry", "structDirtyEntry.html", null ],
@@ -86,6 +88,7 @@ var hierarchy =
     [ "imguiGfxRect", "structimguiGfxRect.html", null ],
     [ "imguiGfxText", "structimguiGfxText.html", null ],
     [ "InputGeom", "classInputGeom.html", null ],
+    [ "NavMeshCreator", "classNavMeshCreator.html", null ],
     [ "NavmeshFlags", "classNavmeshFlags.html", null ],
     [ "NavMeshSetHeader", "structNavMeshSetHeader.html", null ],
     [ "NavMeshTileBuildContext", "structNavMeshTileBuildContext.html", null ],
@@ -98,6 +101,7 @@ var hierarchy =
     [ "rcCompactSpan", "structrcCompactSpan.html", null ],
     [ "rcConfig", "structrcConfig.html", null ],
     [ "rcContext", "classrcContext.html", [
+      [ "BuildContext", "classBuildContext.html", null ],
       [ "BuildContext", "classBuildContext.html", null ]
     ] ],
     [ "rcContour", "structrcContour.html", null ],

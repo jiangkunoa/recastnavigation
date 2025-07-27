@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8cpp.html#a2c3f6775325c30275d11c6abee2db6a0',1,'main.cpp']]],
-  ['maxcompressedsize_1',['maxcompressedsize',['../structdtTileCacheCompressor.html#aaa7fcfc5889a5f3fc5fbf689bbbc1494',1,'dtTileCacheCompressor::maxCompressedSize()'],['../structFastLZCompressor.html#a8fb3236d4cb66a253fd98036536b51a4',1,'FastLZCompressor::maxCompressedSize()']]],
+  ['main_0',['main',['../main_8cpp.html#a2c3f6775325c30275d11c6abee2db6a0',1,'main(int, char **):&#160;main.cpp'],['../RecastBuilder_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;RecastBuilder.cpp']]],
+  ['maxcompressedsize_1',['maxcompressedsize',['../structFastLZCompressor.html#a8fb3236d4cb66a253fd98036536b51a4',1,'FastLZCompressor::maxCompressedSize()'],['../structdtTileCacheCompressor.html#aaa7fcfc5889a5f3fc5fbf689bbbc1494',1,'dtTileCacheCompressor::maxCompressedSize()']]],
   ['mergeandfilterlayerregions_2',['mergeAndFilterLayerRegions',['../RecastRegion_8cpp.html#a25912e8836b3489f54fecd65d850beff',1,'RecastRegion.cpp']]],
   ['mergeandfilterregions_3',['mergeAndFilterRegions',['../RecastRegion_8cpp.html#abd46c685c34317694a2c7bc29caa3494',1,'RecastRegion.cpp']]],
   ['mergecontours_4',['mergeContours',['../RecastContour_8cpp.html#a1b37a039e4a04535bcddcb219ca7945b',1,'RecastContour.cpp']]],

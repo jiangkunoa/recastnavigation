@@ -7,7 +7,7 @@ var dir_f244c4afb4303a82689423998a79af95 =
     [ "imgui.h", "imgui_8h.html", "imgui_8h" ],
     [ "imguiRenderGL.h", "imguiRenderGL_8h.html", "imguiRenderGL_8h" ],
     [ "InputGeom.h", "InputGeom_8h.html", "InputGeom_8h" ],
-    [ "MeshLoaderObj.h", "MeshLoaderObj_8h.html", "MeshLoaderObj_8h" ],
+    [ "MeshLoaderObj.h", "RecastDemo_2Include_2MeshLoaderObj_8h.html", "RecastDemo_2Include_2MeshLoaderObj_8h" ],
     [ "NavMeshPruneTool.h", "NavMeshPruneTool_8h.html", "NavMeshPruneTool_8h" ],
     [ "NavMeshTesterTool.h", "NavMeshTesterTool_8h.html", "NavMeshTesterTool_8h" ],
     [ "OffMeshConnectionTool.h", "OffMeshConnectionTool_8h.html", "OffMeshConnectionTool_8h" ],

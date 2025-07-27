@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['dtassert_0',['dtAssert',['../DetourAssert_8h.html#ad9878e9fa0121ff8d1390e21dc086951',1,'DetourAssert.h']]],
-  ['dump_5freqs_1',['DUMP_REQS',['../NavMeshTesterTool_8cpp.html#a59ed5f3f1c7bd16332ada259b66afe3f',1,'NavMeshTesterTool.cpp']]]
+  ['_5fuse_5fmath_5fdefines_0',['_USE_MATH_DEFINES',['../RecastBuilder_2Cmd_2MeshLoaderObj_8cpp.html#a525335710b53cb064ca56b936120431e',1,'MeshLoaderObj.cpp']]]
 ];
