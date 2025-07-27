@@ -260,6 +260,7 @@ project "Tests"
 		buildoptions { "-Wno-nan-infinity-disabled" }
 		buildoptions { "-fsanitize=undefined", "-fsanitize=address" } -- , "-fsanitize=memory" }
 		linkoptions { "-fsanitize=undefined", "-fsanitize=address" } --, "-fsanitize=memory" }
+		disablewarnings { "unknown-warning-option" }
 
 	-- linux library cflags and libs
 	filter "system:linux"
@@ -503,6 +504,12 @@ project "RecastDemo"
 			"Cocoa.framework",
 		}
 
+		buildoptions {
+			"-Wno-implicit-int-conversion",
+			"-Wno-shorten-64-to-32",
+			"-Wno-deprecated-declarations"
+		}
+
 project "Tests"
 	language "C++"
 	kind "ConsoleApp"
@@ -639,9 +646,9 @@ project "RecastBridge"
         "-fPIC",
         "-std=c++11"
     }
-    linkoptions {
-        "-Wl,--no-undefined"
-    }
+    -- linkoptions {
+    --     "-Wl,--no-undefined"
+    -- }
 	defines {
         "RECASTBRIDGE_EXPORTS", -- 关键：定义导出宏
         "WIN32",

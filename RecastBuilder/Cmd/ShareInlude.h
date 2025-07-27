@@ -52,7 +52,6 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
-#include <sys/epoll.h>
 #include <fcntl.h>
 #include <sys/resource.h>
 #include <string.h>
@@ -67,5 +66,13 @@
 #include <netdb.h>
 #endif
 
-
+#ifdef __linux__
+	// Linux平台
+	#include <sys/epoll.h>
+#elif defined(__APPLE__)
+	// macOS平台
+	#include <sys/types.h>
+	#include <sys/event.h>
+	#include <sys/time.h>
+#endif
 
