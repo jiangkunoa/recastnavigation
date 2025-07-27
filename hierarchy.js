@@ -88,6 +88,7 @@ var hierarchy =
     [ "imguiGfxRect", "structimguiGfxRect.html", null ],
     [ "imguiGfxText", "structimguiGfxText.html", null ],
     [ "InputGeom", "classInputGeom.html", null ],
+    [ "NavMeshCache", "structNavMeshCache.html", null ],
     [ "NavMeshCreator", "classNavMeshCreator.html", null ],
     [ "NavmeshFlags", "classNavmeshFlags.html", null ],
     [ "NavMeshSetHeader", "structNavMeshSetHeader.html", null ],

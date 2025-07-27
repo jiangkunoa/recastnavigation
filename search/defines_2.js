@@ -5,5 +5,6 @@ var searchData=
   ['rc_5fsize_5fmax_2',['RC_SIZE_MAX',['../RecastAlloc_8h.html#a76aa1cda643d12fb282dffdd127c1bac',1,'RecastAlloc.h']]],
   ['rcassert_3',['rcAssert',['../RecastAssert_8h.html#a857ec26f725d5a8d341fedca5a32f649',1,'RecastAssert.h']]],
   ['rclikely_4',['rcLikely',['../RecastAlloc_8h.html#ae2660587d43aff9382684c2410bf2dc5',1,'RecastAlloc.h']]],
-  ['rcunlikely_5',['rcUnlikely',['../RecastAlloc_8h.html#a97095ea2bb90ee745014fe8dc36ca483',1,'RecastAlloc.h']]]
+  ['rcunlikely_5',['rcUnlikely',['../RecastAlloc_8h.html#a97095ea2bb90ee745014fe8dc36ca483',1,'RecastAlloc.h']]],
+  ['recast_5fapi_6',['RECAST_API',['../RecastBridge_8h.html#a00b4e919f7946bca0e1933a8b44aca06',1,'RecastBridge.h']]]
 ];

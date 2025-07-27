@@ -84,6 +84,7 @@ var annotated_dup =
     [ "InputGeom", "classInputGeom.html", "classInputGeom" ],
     [ "LinearAllocator", "structLinearAllocator.html", "structLinearAllocator" ],
     [ "MeshProcess", "structMeshProcess.html", "structMeshProcess" ],
+    [ "NavMeshCache", "structNavMeshCache.html", "structNavMeshCache" ],
     [ "NavMeshCreator", "classNavMeshCreator.html", "classNavMeshCreator" ],
     [ "NavmeshFlags", "classNavmeshFlags.html", "classNavmeshFlags" ],
     [ "NavMeshPruneTool", "classNavMeshPruneTool.html", "classNavMeshPruneTool" ],

@@ -6,6 +6,7 @@ var files_dup =
     [ "DetourTileCache", "dir_76ba9689d458e28c6a6af5e586a54235.html", "dir_76ba9689d458e28c6a6af5e586a54235" ],
     [ "Docs", "dir_5baf679cf4943df8904dce5d41d4d3dc.html", "dir_5baf679cf4943df8904dce5d41d4d3dc" ],
     [ "Recast", "dir_e6cf54c9d4d29ff4a28752d861cf44fa.html", "dir_e6cf54c9d4d29ff4a28752d861cf44fa" ],
+    [ "RecastBridge", "dir_6ba2639fa72c705f75284abb2e2f4013.html", "dir_6ba2639fa72c705f75284abb2e2f4013" ],
     [ "RecastBuilder", "dir_8fe7b3552003365ab263f7a50d4970b1.html", "dir_8fe7b3552003365ab263f7a50d4970b1" ],
     [ "RecastDemo", "dir_bd8164545b6b3da3c53f0f7457fcb102.html", "dir_bd8164545b6b3da3c53f0f7457fcb102" ]
 ];

@@ -159,14 +159,14 @@ var NAVTREEINDEX =
 "BuildContext_8cpp.html",
 "DetourCrowd_8cpp.html#abfe93834630c322a9a508de9c9a1bbb8",
 "DetourTileCacheBuilder_8h.html#a1c5d6b1aaf7fd7e4b4cf2530fc55b64d",
-"RecastMeshDetail_8cpp.html#a127f1eddaf7db32655955561199a064f",
-"classBuildContext.html",
-"classSample.html#aea8a48c34d94596f6affbbd28938fb2c",
-"classdtNodePool.html#a7239dd92a9ea9b604c33a0a3472dc7ee",
-"functions_s.html",
-"md_CODE__OF__CONDUCT.html#scope",
-"structdtCrowdAgentAnimation.html#a6895f4df2e560189e66fac03ca02e2ba",
-"structrcContourRegion.html"
+"RecastDump_8h.html#aa11f7a7470e8e8aeea6f155e39edccf8",
+"ShareInlude_8h.html",
+"classSample.html#aa3b550f9696ae9d1838d5ed68aad9df5",
+"classdtLocalBoundary.html#a270ef7f2e72520df6bd5c3a0e6b9a869",
+"functions_func_t.html",
+"md_CHANGELOG.html#autotoc_md131---2009-07-14",
+"structTileCacheSetHeader.html#af3c63745db5ba90ee080f739b3bea50f",
+"structrcCompactCell.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
