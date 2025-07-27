@@ -68,6 +68,8 @@ static SampleItem g_samples[] =
 };
 static const int g_nsamples = sizeof(g_samples) / sizeof(SampleItem);
 
+static float s_hitPos[3] = {0}; 
+
 int main(int /*argc*/, char** /*argv*/)
 {
 	// Init SDL
@@ -391,6 +393,9 @@ int main(int /*argc*/, char** /*argv*/)
 					pos[1] = rayStart[1] + (rayEnd[1] - rayStart[1]) * hitTime;
 					pos[2] = rayStart[2] + (rayEnd[2] - rayStart[2]) * hitTime;
 					sample->handleClick(rayStart, pos, processHitTestShift);
+					s_hitPos[0] = pos[0];
+					s_hitPos[1] = pos[1];
+					s_hitPos[2] = pos[2];
 				}
 			}
 			else
@@ -532,6 +537,18 @@ int main(int /*argc*/, char** /*argv*/)
 		{
 			const char msg[] = "W/S/A/D: Move  RMB: Rotate";
 			imguiDrawText(280, height-20, IMGUI_ALIGN_LEFT, msg, imguiRGBA(255,255,255,128));
+			
+			char mousePosText[64];
+			snprintf(mousePosText, 64, "Mouse: %d,%d", mousePos[0], height - mousePos[1]);
+			imguiDrawText(400, height - 30, IMGUI_ALIGN_LEFT, mousePosText, imguiRGBA(255,255,255,255));
+
+			if (s_hitPos[0] != 0 || s_hitPos[1] != 0 || s_hitPos[2] != 0)
+			{
+				char worldPosText[128];
+				snprintf(worldPosText, 128, "Selected: (%.2f, %.2f, %.2f)", 
+						s_hitPos[0], s_hitPos[1], s_hitPos[2]);
+				imguiDrawText(400, height - 50, IMGUI_ALIGN_LEFT, worldPosText, imguiRGBA(255,255,0,255));
+			}
 		}
 		
 		if (showMenu)
