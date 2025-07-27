@@ -1,5 +1,7 @@
-#include "CmdHelper.h"
+﻿#include "CmdHelper.h"
 #include "NavMeshCreator.h"
+#include <chrono>  // 添加头文件
+#include <thread>  // 添加头文件
 void CmdHelper::CmdLine(int argc, char* argv[])
 {
 	/*Out("nav_test.obj","nav_test.bin");
@@ -32,7 +34,7 @@ void CmdHelper::CmdLine(int argc, char* argv[])
 		std::string dst = argv[3];
 		CmdHelper::Out(src,dst);
 	}
-	Sleep(2000);
+	std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 }
 
 void CmdHelper::Help()

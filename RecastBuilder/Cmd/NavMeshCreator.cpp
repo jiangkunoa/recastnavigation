@@ -1,7 +1,9 @@
-#include "NavMeshCreator.h"
+ï»¿#include "NavMeshCreator.h"
 #include "ConfigFile.h"
 #include "MeshLoaderObj.h"
 #include "BuildContext.h"
+#include "DetourNavMesh.h"
+#include "DetourNavMeshBuilder.h"
 NavMeshCreator::NavMeshCreator()
 {
 	Init();
@@ -92,7 +94,7 @@ void NavMeshCreator::Build(std::string cfgname)
 		printf("%s not created.\n", cfgname.c_str());
 		return;
 	}
-	//¶ÁÈ¡ÎÄ¼şÅäÖÃ
+	//ï¿½ï¿½È¡ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½
 	float cellsize = cfgfile.GetFloatValue("cellsize");
 	float cellheight = cfgfile.GetFloatValue("cellheight");
 	float agentheight = cfgfile.GetFloatValue("agentheight");
@@ -106,9 +108,10 @@ void NavMeshCreator::Build(std::string cfgname)
 	float vertsperpoly = cfgfile.GetFloatValue("vertsperpoly");
 	float detailsampledist = cfgfile.GetFloatValue("detailsampledist");
 	float detailsamplemaxerror = cfgfile.GetFloatValue("detailsamplemaxerror");
-	float partitiontype = cfgfile.GetFloatValue("partitiontype");
-	float tilesize = cfgfile.GetFloatValue("tilesize");
-	//meshÅäÖÃ
+	//JKF æœªä½¿ç”¨è­¦å‘Šæ¶ˆé™¤
+	// float partitiontype = cfgfile.GetFloatValue("partitiontype");
+	// float tilesize = cfgfile.GetFloatValue("tilesize");
+	//meshï¿½ï¿½ï¿½ï¿½
 	const float* bmin = _meshBMin;
 	const float* bmax = _meshBMax;
 	const float* verts = _mesh->getVerts();

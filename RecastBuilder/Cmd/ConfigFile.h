@@ -7,15 +7,17 @@ public:
 	CConfigFile(void);
 	~CConfigFile(void);
 
-	BOOL Load(std::string strFileName);
+	bool Load(std::string strFileName);
 
 	std::string GetStringValue(std::string strName);
 
-	INT32 GetIntValue( std::string VarName);
+	int GetIntValue( std::string VarName);
 
-	FLOAT GetFloatValue( std::string VarName);
+	float GetFloatValue( std::string VarName);
 
-	DOUBLE GetDoubleValue( std::string VarName);
+	double GetDoubleValue( std::string VarName);
+
+	void StringTrim(std::string& strValue);
 
 private:
 	std::map<std::string, std::string> m_Values;

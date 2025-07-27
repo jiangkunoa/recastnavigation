@@ -19,7 +19,7 @@
 #include <deque>
 #include <assert.h>
 #include <limits>
-
+#include <cmath>
 #include <errno.h>
 
 #if defined(WIN32) || defined(WIN64)
@@ -28,17 +28,23 @@
 #define PLATFORM_LINUX
 #endif
 
-
+#ifdef _WIN32
+	#include <io.h>      // Windows
+	#include <direct.h>   // Windows
+	#include <process.h>
+	#include <ws2tcpip.h>
+	#include <Windows.h>
+	#include <mswsock.h>
+	#include "Mstcpip.h"
+	#include <time.h>
+	#include <stdarg.h>
+#else
+	#include <unistd.h>  // Linux/macOS
+	#include <sys/stat.h> // Linux/macOS
+	#include <pthread.h>  // Linux/macOS
+#endif
 #ifdef PLATFORM_WINDOWS
-#include <io.h>
-#include <direct.h>
-#include <process.h>
-#include <ws2tcpip.h>
-#include <Windows.h>
-#include <mswsock.h>
-#include "Mstcpip.h"
-#include <time.h>
-#include <stdarg.h>
+
 
 #else
 #include <unistd.h>

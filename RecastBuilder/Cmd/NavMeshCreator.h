@@ -2,7 +2,6 @@
 #define NavMeshCreator_h__
 #include "ShareInlude.h"
 #include "Recast.h"
-#include "DetourNavMeshBuilder.h"
 #include "DetourNavMesh.h"
 enum SamplePartitionType
 {

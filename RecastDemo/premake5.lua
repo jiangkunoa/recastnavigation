@@ -73,6 +73,8 @@ project "DebugUtils"
 project "Detour"
 	language "C++"
 	kind "StaticLib"
+	pic "On"
+	buildoptions { "-fPIC" }
 	includedirs { 
 		"../Detour/Include" 
 	}
@@ -90,6 +92,8 @@ project "Detour"
 project "DetourCrowd"
 	language "C++"
 	kind "StaticLib"
+	pic "On"
+	buildoptions { "-fPIC" }
 	includedirs {
 		"../DetourCrowd/Include",
 		"../Detour/Include",
@@ -103,6 +107,8 @@ project "DetourCrowd"
 project "DetourTileCache"
 	language "C++"
 	kind "StaticLib"
+	pic "On"
+	buildoptions { "-fPIC" }
 	includedirs {
 		"../DetourTileCache/Include",
 		"../Detour/Include",
@@ -116,6 +122,8 @@ project "DetourTileCache"
 project "Recast"
 	language "C++"
 	kind "StaticLib"
+	pic "On"
+	buildoptions { "-fPIC" }
 	includedirs { 
 		"../Recast/Include" 
 	}
@@ -348,6 +356,7 @@ workspace "recastnavigation"
 project "DebugUtils"
 	language "C++"
 	kind "StaticLib"
+	buildoptions { "-fPIC" }
 	includedirs { 
 		"../DebugUtils/Include",
 		"../Detour/Include",
@@ -362,6 +371,7 @@ project "DebugUtils"
 project "Detour"
 	language "C++"
 	kind "StaticLib"
+	buildoptions { "-fPIC" }
 	includedirs { 
 		"../Detour/Include" 
 	}
@@ -379,6 +389,7 @@ project "Detour"
 project "DetourCrowd"
 	language "C++"
 	kind "StaticLib"
+	buildoptions { "-fPIC" }
 	includedirs {
 		"../DetourCrowd/Include",
 		"../Detour/Include",
@@ -392,6 +403,7 @@ project "DetourCrowd"
 project "DetourTileCache"
 	language "C++"
 	kind "StaticLib"
+	buildoptions { "-fPIC" }
 	includedirs {
 		"../DetourTileCache/Include",
 		"../Detour/Include",
@@ -405,6 +417,7 @@ project "DetourTileCache"
 project "Recast"
 	language "C++"
 	kind "StaticLib"
+	buildoptions { "-fPIC" }
 	includedirs { 
 		"../Recast/Include" 
 	}
@@ -580,6 +593,8 @@ project "Tests"
 project "RecastBuilder"
 	language "C++"
 	kind "ConsoleApp"
+	cppdialect "C++11"
+	buildoptions { "-fPIC" }
 	includedirs { 
 		"../RecastDemo/Include",
 		"../DebugUtils/Include",
@@ -611,13 +626,22 @@ project "RecastBuilder"
 	filter {"system:windows", "platforms:Win64"} 
 		architecture "x64"
 		targetdir ( todir .. "/Bin/x64" )
+	filter "configurations:Release"
+   		buildoptions { "-std=c++11" }
 
 
 project "RecastBridge"
 	language "C++"
 	kind "SharedLib"
 	targetname "RecastBridge"
-
+	pic "On"
+    buildoptions { 
+        "-fPIC",
+        "-std=c++11"
+    }
+    linkoptions {
+        "-Wl,--no-undefined"
+    }
 	defines {
         "RECASTBRIDGE_EXPORTS", -- 关键：定义导出宏
         "WIN32",

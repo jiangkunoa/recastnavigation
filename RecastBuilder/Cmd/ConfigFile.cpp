@@ -1,5 +1,4 @@
 ﻿#include "ConfigFile.h"
-#include "CommonConvert.h"
 CConfigFile::CConfigFile( void )
 {
 
@@ -10,27 +9,37 @@ CConfigFile::~CConfigFile( void )
 
 }
 
-BOOL CConfigFile::Load( std::string strFileName )
+bool CConfigFile::Load( std::string strFileName )
 {
 	FILE* pFile = fopen(strFileName.c_str(), "r+");
 
 	if(pFile == NULL)
 	{
-		return FALSE;
+		return false;
 	}
 
-	CHAR szBuff[256] = {0};
+	char szBuff[256] = {0};
 
 	do
 	{
-		fgets(szBuff, 256, pFile);
+		if (fgets(szBuff, 256, pFile) == NULL) {
+			// 处理错误或文件结束
+			if (feof(pFile)) {
+				// 文件正常结束
+			} else {
+				// 读取错误（如文件损坏）
+				perror("fgets failed");
+				fclose(pFile);
+				return false;
+			}
+		}
 
 		if(szBuff[0] == ';')
 		{
 			continue;
 		}
 
-		CHAR* pChar = strchr(szBuff, '=');
+		char* pChar = strchr(szBuff, '=');
 		if(pChar == NULL)
 		{
 			continue;
@@ -40,8 +49,8 @@ BOOL CConfigFile::Load( std::string strFileName )
 		strName.assign(szBuff, pChar - szBuff);
 		std::string strValue = pChar + 1;
 
-		CommonConvert::StringTrim(strName);
-		CommonConvert::StringTrim(strValue);
+		StringTrim(strName);
+		StringTrim(strValue);
 
 		m_Values.insert(std::make_pair(strName, strValue));
 
@@ -51,7 +60,16 @@ BOOL CConfigFile::Load( std::string strFileName )
 	fclose(pFile);
 
 
-	return TRUE;
+	return true;
+}
+
+void CConfigFile::StringTrim(std::string& strValue)
+{
+	if(!strValue.empty())
+	{
+		strValue.erase(0, strValue.find_first_not_of((" \n\r\t")));
+		strValue.erase(strValue.find_last_not_of((" \n\r\t")) + 1);
+	}
 }
 
 std::string CConfigFile::GetStringValue( std::string strName )
@@ -67,17 +85,17 @@ std::string CConfigFile::GetStringValue( std::string strName )
 	return "";
 }
 
-INT32 CConfigFile::GetIntValue( std::string VarName )
+int CConfigFile::GetIntValue( std::string VarName )
 {
 	return atoi(GetStringValue(VarName).c_str());
 }
 
-FLOAT CConfigFile::GetFloatValue( std::string VarName )
+float CConfigFile::GetFloatValue( std::string VarName )
 {
 	return (float)atof(GetStringValue(VarName).c_str());
 }
 
-DOUBLE CConfigFile::GetDoubleValue( std::string VarName )
+double CConfigFile::GetDoubleValue( std::string VarName )
 {
 	return atof(GetStringValue(VarName).c_str());
 }
