@@ -7,5 +7,6 @@ var main_8cpp =
     [ "createTile", "main_8cpp.html#a89c98c5c7d398e3e59c736d9da4f9ada", null ],
     [ "main", "main_8cpp.html#a2c3f6775325c30275d11c6abee2db6a0", null ],
     [ "g_nsamples", "main_8cpp.html#a60e01056b56609c9984c7f9dee5084cd", null ],
-    [ "g_samples", "main_8cpp.html#adf355327e327a55707483da0fb936165", null ]
+    [ "g_samples", "main_8cpp.html#adf355327e327a55707483da0fb936165", null ],
+    [ "s_hitPos", "main_8cpp.html#ae008592869739ae26b92e9d4d0d28e72", null ]
 ];
