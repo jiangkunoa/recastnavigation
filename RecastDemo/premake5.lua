@@ -611,3 +611,49 @@ project "RecastBuilder"
 	filter {"system:windows", "platforms:Win64"} 
 		architecture "x64"
 		targetdir ( todir .. "/Bin/x64" )
+
+
+project "RecastBridge"
+	language "C++"
+	kind "SharedLib"
+	targetname "RecastBridge"
+
+	defines {
+        "RECASTBRIDGE_EXPORTS", -- 关键：定义导出宏
+        "WIN32",
+        "_WINDOWS",
+        "_CRT_SECURE_NO_WARNINGS",
+        "NOMINMAX" -- 避免 Windows.h 定义 min/max 宏
+    }
+
+	characterset "Unicode"
+
+	disablewarnings {
+        "4251", -- DLL 接口警告
+        "4275", -- DLL 接口警告
+        "4819"  -- 编码警告
+    }
+
+	includedirs { 
+		"../RecastDemo/Include",
+		"../DebugUtils/Include",
+		"../Detour/Include",
+		"../DetourCrowd/Include",
+		"../DetourTileCache/Include",
+		"../Recast/Include",
+		"../RecastBuilder/Cmd",
+		"../RecastBridge"  -- 添加你的头文件目录
+	}
+	files {
+		"../RecastBridge/*.h",
+		"../RecastBridge/*.cpp",
+	}
+	
+	links {
+		"DebugUtils",
+		"Detour",
+		"DetourCrowd",
+		"DetourTileCache",
+		"Recast",
+		"RecastBuilder"
+	}
