@@ -1,5 +1,7 @@
 var NAVTREEINDEX8 =
 {
+"md_CONTRIBUTING.html#submitting-an-issue":[6,3,0],
+"md_CONTRIBUTING.html#want-a-new-feature":[6,2],
 "md_Docs_2__1__Introduction.html":[0],
 "md_Docs_2__1__Introduction.html#agent-attributes":[0,6,0],
 "md_Docs_2__1__Introduction.html#high-level-overview-of-the-recast-navmesh-building-process":[0,9],
@@ -247,7 +249,5 @@ var NAVTREEINDEX8 =
 "structdtCrowdAgentAnimation.html#a607dc9fc1c1d88d93f5140217a298f45":[7,0,18,2],
 "structdtCrowdAgentAnimation.html#a6895f4df2e560189e66fac03ca02e2ba":[7,0,18,6],
 "structdtCrowdAgentAnimation.html#a738a08a7b93b678252680f453e4df851":[7,0,18,4],
-"structdtCrowdAgentAnimation.html#a84a98c95db9bc9db2f334311430669ac":[7,0,18,3],
-"structdtCrowdAgentAnimation.html#a96b279c54ccfe7d77cc576edbff7298e":[7,0,18,5],
-"structdtCrowdAgentAnimation.html#aed88b3aa0469a0462d5f7d055d3b72cc":[7,0,18,1]
+"structdtCrowdAgentAnimation.html#a84a98c95db9bc9db2f334311430669ac":[7,0,18,3]
 };

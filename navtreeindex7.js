@@ -1,5 +1,7 @@
 var NAVTREEINDEX7 =
 {
+"functions_vars_c.html":[7,3,2,2],
+"functions_vars_d.html":[7,3,2,3],
 "functions_vars_e.html":[7,3,2,4],
 "functions_vars_f.html":[7,3,2,5],
 "functions_vars_g.html":[7,3,2,6],
@@ -34,8 +36,8 @@ var NAVTREEINDEX7 =
 "globals_enum.html":[8,1,4],
 "globals_eval.html":[8,1,5],
 "globals_f.html":[8,1,0,6],
-"globals_func.html":[8,1,1,0],
 "globals_func.html":[8,1,1],
+"globals_func.html":[8,1,1,0],
 "globals_func_b.html":[8,1,1,1],
 "globals_func_c.html":[8,1,1,2],
 "globals_func_d.html":[8,1,1,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX7 =
 "md_CONTRIBUTING.html#commit-message-format":[6,3,2],
 "md_CONTRIBUTING.html#found-a-bug":[6,3],
 "md_CONTRIBUTING.html#have-a-question-or-problem":[6,1],
-"md_CONTRIBUTING.html#submitting-a-pull-request":[6,3,1],
-"md_CONTRIBUTING.html#submitting-an-issue":[6,3,0],
-"md_CONTRIBUTING.html#want-a-new-feature":[6,2]
+"md_CONTRIBUTING.html#submitting-a-pull-request":[6,3,1]
 };

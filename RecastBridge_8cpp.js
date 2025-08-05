@@ -3,6 +3,7 @@ var RecastBridge_8cpp =
     [ "NavMeshCache", "structNavMeshCache.html", "structNavMeshCache" ],
     [ "distanceToObstacle", "RecastBridge_8cpp.html#a4c863a83ed83fa8726296eef0938e757", null ],
     [ "findPathOptimized", "RecastBridge_8cpp.html#a20c14a12a4181723a59df9eef7867a85", null ],
+    [ "frand", "RecastBridge_8cpp.html#ac8e3cc6c626394b36e557edb46eb23c5", null ],
     [ "getRandomPoint", "RecastBridge_8cpp.html#aaa93b8d03369e73d60b59dc70ace283f", null ],
     [ "getTerrainBounds", "RecastBridge_8cpp.html#ae62806627b7a5403cd98b17daf8a97c0", null ],
     [ "isPointNavigable", "RecastBridge_8cpp.html#a0ed9ffa00fde9fe142c38069fa64c739", null ],
