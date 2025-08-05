@@ -1,0 +1,4 @@
+windows:
+    - premake5 vs2022
+    - in vs2022/build
+    - msbuild .\recastnavigation.sln -p:Configuration=Release -p:Platform=Win64
