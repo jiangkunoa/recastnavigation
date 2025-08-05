@@ -382,6 +382,13 @@ RECAST_API bool getTerrainBounds(int navMeshId, float* minx, float* miny, float*
 }
 
 
+// Returns a random number [0..1]
+static float frand()
+{
+	//	return ((float)(rand() & 0xffff)/(float)0xffff);
+	return (float)rand()/(float)RAND_MAX;
+}
+
 RECAST_API bool getRandomPoint(int navMeshId, float* outPoint)
 {
     std::lock_guard<std::mutex> lock(s_navMeshCache.cacheMutex);
@@ -398,14 +405,14 @@ RECAST_API bool getRandomPoint(int navMeshId, float* outPoint)
     dtQueryFilter filter;
     filter.setIncludeFlags(0xFFFF);  // 包含所有可行走区域
     
-    dtPolyRef randomRef;
-    float randomPt[3];
-    // 修复：使用nullptr代替lambda，并调整参数顺序
-    if (dtStatusSucceed(query->findRandomPoint(&filter, nullptr, &randomRef, randomPt))) {
-        memcpy(outPoint, randomPt, sizeof(float) * 3);
-        dtFreeNavMeshQuery(query);
-        return true;
-    }
+	dtPolyRef randomRef;
+	float randomPt[3];
+	// 修复：使用nullptr代替lambda，并调整参数顺序
+	if (dtStatusSucceed(query->findRandomPoint(&filter, frand, &randomRef, randomPt))) {
+		memcpy(outPoint, randomPt, sizeof(float) * 3);
+		dtFreeNavMeshQuery(query);
+		return true;
+	}
 
     dtFreeNavMeshQuery(query);
     return false;
