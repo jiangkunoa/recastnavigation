@@ -331,3 +331,82 @@ RECAST_API int findPathOptimized(int navMeshId,
 	dtFreeNavMeshQuery(query);
 	return 0; // 成功
 }
+
+
+RECAST_API bool getTerrainBounds(int navMeshId, float* minx, float* miny, float* maxx, float* maxy)
+{
+    std::lock_guard<std::mutex> lock(s_navMeshCache.cacheMutex);
+    auto it = s_navMeshCache.cache.find(navMeshId);
+    if (it == s_navMeshCache.cache.end()) return false;
+
+    dtNavMesh* navMesh = it->second;
+    if (!navMesh) return false;
+
+    const dtNavMeshParams* params = navMesh->getParams();
+    if (!params) return false;
+
+    // 初始化边界为导航网格原点
+    float minX = params->orig[0];
+    float maxX = params->orig[0];
+    float minZ = params->orig[2];
+    float maxZ = params->orig[2];
+
+    // 修复1：使用正确的遍历方式获取tile
+    for (int z = 0; z < params->maxTiles; ++z) {
+        for (int x = 0; x < params->maxTiles; ++x) {
+            const dtMeshTile* tile = navMesh->getTileAt(x, z, 0); // 使用公共API获取tile
+            if (!tile || !tile->header) continue;
+
+            // 修复2：使用正确的字段名 (x/z 而不是 tileX/tileZ)
+            const dtMeshHeader* header = tile->header;
+            float tileMinX = params->orig[0] + header->x * params->tileWidth;
+            float tileMaxX = tileMinX + params->tileWidth;
+            float tileMinZ = params->orig[2] + header->y * params->tileHeight;
+            float tileMaxZ = tileMinZ + params->tileHeight;
+
+            // 更新整体边界
+            minX = std::min(minX, tileMinX);
+            maxX = std::max(maxX, tileMaxX);
+            minZ = std::min(minZ, tileMinZ);
+            maxZ = std::max(maxZ, tileMaxZ);
+        }
+    }
+
+    // 输出结果（注意：这里将Z轴范围映射到Y参数，符合用户要求的miny/maxy）
+    *minx = minX;
+    *miny = minZ;
+    *maxx = maxX;
+    *maxy = maxZ;
+
+    return true;
+}
+
+
+RECAST_API bool getRandomPoint(int navMeshId, float* outPoint)
+{
+    std::lock_guard<std::mutex> lock(s_navMeshCache.cacheMutex);
+    auto it = s_navMeshCache.cache.find(navMeshId);
+    if (it == s_navMeshCache.cache.end()) return false;
+
+    dtNavMesh* navMesh = it->second;
+    dtNavMeshQuery* query = dtAllocNavMeshQuery();
+    if (!query || dtStatusFailed(query->init(navMesh, 2048))) {
+        if (query) dtFreeNavMeshQuery(query);
+        return false;
+    }
+
+    dtQueryFilter filter;
+    filter.setIncludeFlags(0xFFFF);  // 包含所有可行走区域
+    
+    dtPolyRef randomRef;
+    float randomPt[3];
+    // 修复：使用nullptr代替lambda，并调整参数顺序
+    if (dtStatusSucceed(query->findRandomPoint(&filter, nullptr, &randomRef, randomPt))) {
+        memcpy(outPoint, randomPt, sizeof(float) * 3);
+        dtFreeNavMeshQuery(query);
+        return true;
+    }
+
+    dtFreeNavMeshQuery(query);
+    return false;
+}

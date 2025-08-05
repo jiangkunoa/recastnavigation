@@ -26,6 +26,8 @@ extern "C" {
 									float* outPoints,
 									int maxPoints,
 									int* outPointCount);
+	RECAST_API bool getTerrainBounds(int navMeshId, float* minx, float* miny, float* maxx, float* maxy);
+	RECAST_API bool getRandomPoint(int navMeshId, float* outPoint)
 #ifdef __cplusplus
 }
 #endif
